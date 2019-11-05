@@ -5,9 +5,9 @@
     
 }
 @keyframes shadow {
-    from {border-radius: none; }
-    50%{border-radius:20px ; }
-    to {border-radius:none ;}
+    from {border-radius: none;background: red; }
+    50%{border-radius:20px ;background: red; }
+    to {border-radius:none ;background: red;}
     }
 html{
     width: 100%;
@@ -46,6 +46,13 @@ span{
     background: #000;
     display: grid;
     border-radius: 10px;
+    -webkit-user-select: none;
+    /* user-select -- это нестандартное свойство */
+
+    -moz-user-select: none;
+    /* поэтому нужны префиксы */
+
+    -ms-user-select: none;
 }
 .keys{
     color:#fff;
@@ -96,6 +103,6 @@ span{
     cursor: pointer;
 }
 .active{
-    background: red;
+    
     animation: shadow  500ms  ease-in-out;
 }

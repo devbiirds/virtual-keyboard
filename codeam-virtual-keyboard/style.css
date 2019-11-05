@@ -4,6 +4,11 @@
     box-sizing: border-box;
     
 }
+@keyframes shadow {
+    from {border-radius: none; }
+    50%{border-radius:20px ; }
+    to {border-radius:none ;}
+    }
 html{
     width: 100%;
     height: 100%;
@@ -14,6 +19,26 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.caps_active{
+    text-transform: uppercase;
+}
+.caps{
+    text-transform: none;
+}
+.mainbox{
+    display: flex;
+    flex-direction: column;
+}
+.textarea{
+    height: 200px;
+    width: 1080px;
+    border:1px solid red;
+    display: flex;
+    overflow: hidden;
+}
+span{
+    
 }
 .keyboard{
     width: 1080px;
@@ -72,4 +97,5 @@ body{
 }
 .active{
     background: red;
+    animation: shadow  500ms  ease-in-out;
 }

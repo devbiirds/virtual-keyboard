@@ -1,5 +1,4 @@
-var arr = [192, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 189, 187, "Backspace", "Tab", 81, 87, 69, 82, 84, 89, 85, 73, 79, 80, 219, 221, 220, "Delete", "CapsLock", 65, 83, 68, 70, 71, 72, 74, 75, 76, 186, 222, "Enter", "ShiftLeft",90,
-  88,
+var arr = [192, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 189, 187, "Backspace", "Tab", 81, 87, 69, 82, 84, 89, 85, 73, 79, 80, 219, 221, 220, "Delete", "CapsLock", 65, 83, 68, 70, 71, 72, 74, 75, 76, 186, 222, "Enter", "ShiftLeft",90,88,
   67,
   86,
   66,
@@ -20,15 +19,18 @@ var arr = [192, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 189, 187, "Backspace", "
   40,
   39
 ];
+
 var lattin = ["`",1,2,3,4,5,6,7,8,9,0,'-','=',"q","w","e","r","t","y","u","i","o","p","[","]","\\","a","s","d","f","g","h","j","k","l",";","'","z","x","c","v","b","n","m",",",".","/"
 ];
 var cyrrilic = ["ё",1,2,3,4,5,6,7,8,9,0,'-','=',"й","ц","у","к","е","н","г","ш","щ","з","х","ъ","\\","ф","ы","в","а","п","р","о","л","д","ж","э","я","ч","с","м","и","т","ь","б","ю","."
 ];
-console.log(sessionStorage);
+
 var counter_key = 0;
 var counter_keys_key =0;
 var line_size = [14,15,13,13,9]
 var flag_Caps = false;
+
+
 var mainbox = document.createElement("div");
 document.body.appendChild(mainbox).classList.add('mainbox');
 var textarea = document.createElement('textarea')
@@ -93,22 +95,16 @@ let keyline = document.createElement('div');
         keys_key.textContent = 'Space';
         break;
         }
-      case 'Delete':{
-        keys_key.textContent = 'Del';
-        break;
-        }
-      case'AltLeft':{
-        keys_key.textContent = 'Alt';
-        break;
-      }
-      case'AltRight':{
-        keys_key.textContent = 'Alt';
-        break;
-      }
-      case 'MetaLeft':{
-        keys_key.textContent = 'Win';
-        break;
-      }
+      case 'Delete':keys_key.textContent = 'Del'; break;
+        
+      case'AltLeft':
+        keys_key.textContent = 'Alt'; break;
+      
+      case'AltRight':
+        keys_key.textContent = 'Alt'; break;
+      
+      case 'MetaLeft': keys_key.textContent = 'Win';break;
+      
       default:
         if(sessionStorage.getItem('lan') == 'en'){
           if(String(lattin[counter_keys_key]) == "undefined"){
@@ -149,7 +145,7 @@ document.querySelectorAll('.arrow').forEach(function (element,counter =0) {
     case 0:element.appendChild(arrow).classList.add('fas','fa-arrow-up');break;
     case 1:element.appendChild(arrow).classList.add('fas','fa-arrow-left');break;
     case 2:element.appendChild(arrow).classList.add('fas','fa-arrow-down');break;
-    case 3:  element.appendChild(arrow).classList.add('fas','fa-arrow-right');break;
+    case 3:element.appendChild(arrow).classList.add('fas','fa-arrow-right');break;
     default:
       break;
   }
@@ -177,7 +173,6 @@ document.onkeydown = function(event) {
       });
       flag_Caps = !flag_Caps;
     } else {
-      console.log(document.querySelectorAll('.caps'));
       document.querySelectorAll(".caps").forEach(function(element) {
         element.classList.remove("caps");
         element.classList.add("caps_active");
@@ -264,15 +259,14 @@ document.onkeydown = function(event) {
       sessionStorage.setItem('lan','ru');
     }
     if (sessionStorage.getItem('lan') == 'en') {
-      console.log('English')
+  
       document.querySelectorAll(".letter").forEach(function(element, counter = 0) {
           element.textContent = lattin[counter];
           counter++;
         });
       
     } else {
-      console.log('Russian');
-      console.log(document.querySelectorAll('.letter'))
+     
       document.querySelectorAll(".letter").forEach(function(element, counter = 0) {
           element.textContent = cyrrilic[counter];
           counter++;
@@ -287,7 +281,6 @@ document.onkeydown = function(event) {
     
   }
 };
-var line_pointer = 0;
 document.querySelectorAll(".keys").forEach(function(item) {
   item.onclick = function(event) {
     setTimeout(() => {

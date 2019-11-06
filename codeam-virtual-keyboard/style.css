@@ -1,108 +1,109 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-@keyframes shadow {
-    from {border-radius: none;background: red; }
-    50%{border-radius:20px ;background: red; }
-    to {border-radius:none ;background: red;}
-    }
-html{
-    width: 100%;
-    height: 100%;
+@font-face {
+  font-family: "FuturaBookC";
+  src: url(/assets/fonts//futurabookc.otf);
 }
-body{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@keyframes click {
+  from {
+    border-radius: none;
+    background: red;
+  }
+  50% {
+    border-radius: 50px;
+    background: red;
+  }
+  to {
+    border-radius: none;
+    background: red;
+  }
 }
-.caps_active{
-    text-transform: uppercase;
+html {
+  width: 100%;
+  height: 100%;
+  font-family: "FuturaBookC";
 }
-.caps{
-    text-transform: none;
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.mainbox{
-    display: flex;
-    flex-direction: column;
+.caps_active {
+  text-transform: uppercase;
 }
-.textarea{
-    height: 200px;
-    width: 1080px;
-    border:1px solid red;
-    display: flex;
-    overflow: hidden;
+.caps {
+  text-transform: none;
 }
-span{
-    
+.mainbox {
+  display: flex;
+  flex-direction: column;
 }
-.keyboard{
-    width: 1080px;
-    height: 400px;
-    background: #000;
-    display: grid;
-    border-radius: 10px;
-    -webkit-user-select: none;
-    /* user-select -- это нестандартное свойство */
-
-    -moz-user-select: none;
-    /* поэтому нужны префиксы */
-
-    -ms-user-select: none;
+.textarea {
+  height: 200px;
+  width: 1080px;
+  border: 1px solid red;
+  display: flex;
+  overflow: hidden;
 }
-.keys{
-    color:#fff;
-    background: #c00;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    margin: 0 5px 0 5px;
-    border-radius: 2px;
-    
+.keyboard {
+  width: 1080px;
+  height: 400px;
+  background: #000;
+  display: grid;
+  border-radius: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
-.mainbox__keyline{
-    align-items: center;
+.keys {
+  color: #fff;
+  background: #c00;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px 0 5px;
+  border-radius: 10px;
+}
+.mainbox__keyline {
+  align-items: center;
   display: flex;
 }
-
-.keys__key{
-    
+.backspace {
+  width: 160px;
 }
-.backspace{
-    width: 160px;
+.space {
+  width: 345px;
 }
-.space{
-    width: 345px;
+.caps_lock {
+  width: 100px;
 }
-.caps_lock{
-    width: 100px;
+.tab {
+  width: 90px;
 }
-.tab{
-    width: 90px;
+.shift {
+  width: 145px;
 }
-.shift{
-    width: 145px;
+.enter {
+  width: 190px;
 }
-.enter{
-    width: 120px;
+.leftshift {
+  width: 145px;
 }
-.leftshift{
-    width: 145px;
+.ctrl {
+  width: 100px;
 }
-.ctrl{
-    width: 100px;
+.keys:hover {
+  background: red;
+  cursor: pointer;
 }
-.keys:hover{
-    background: red;
-    cursor: pointer;
-}
-.active{
-    
-    animation: shadow  500ms  ease-in-out;
+.active {
+  background: red;
+  animation: click 200ms ease-in-out;
 }
